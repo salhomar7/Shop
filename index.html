@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>متجري الإلكتروني</title>
+  <title>Ù…ØªØ¬Ø±ÙŠ Ø§Ù„Ø¥Ù„ÙƒØªØ±ÙˆÙ†ÙŠ</title>
   <style>
     :root { --primary: #0284c7; --success: #16a34a; --bg: #f1f5f9; --card: #ffffff; --text: #0f172a; }
     * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
@@ -29,40 +29,40 @@
 <body>
 
 <header>
-  <h1>🏪 معرض المنتجات</h1>
-  <div><button class="btn-admin" onclick="toggleAdmin()">⚙️ الإدارة</button></div>
+  <h1>ðŸª Ù…Ø¹Ø±Ø¶ Ø§Ù„Ù…Ù†ØªØ¬Ø§Øª</h1>
+  <div><button class="btn-admin" onclick="toggleAdmin()">âš™ï¸ Ø§Ù„Ø¥Ø¯Ø§Ø±Ø©</button></div>
 </header>
 
 <div id="adminPanel">
-  <h3 style="margin-top:0;">لوحة تحكم المتجر</h3>
+  <h3 style="margin-top:0;">Ù„ÙˆØ­Ø© ØªØ­ÙƒÙ… Ø§Ù„Ù…ØªØ¬Ø±</h3>
   <div class="admin-grid">
-    <input type="text" id="pName" placeholder="اسم المنتج">
-    <input type="number" id="pPrice" placeholder="السعر (ج.م)">
-    <input type="text" id="pImg" placeholder="رابط صورة المنتج (أو اتركه فارغاً)">
-    <input type="text" id="pDesc" placeholder="وصف سريع أو موديل">
+    <input type="text" id="pName" placeholder="Ø§Ø³Ù… Ø§Ù„Ù…Ù†ØªØ¬">
+    <input type="number" id="pPrice" placeholder="Ø§Ù„Ø³Ø¹Ø± (Ø¬.Ù…)">
+    <input type="text" id="pImg" placeholder="Ø±Ø§Ø¨Ø· ØµÙˆØ±Ø© Ø§Ù„Ù…Ù†ØªØ¬ (Ø£Ùˆ Ø§ØªØ±ÙƒÙ‡ ÙØ§Ø±ØºØ§Ù‹)">
+    <input type="text" id="pDesc" placeholder="ÙˆØµÙ Ø³Ø±ÙŠØ¹ Ø£Ùˆ Ù…ÙˆØ¯ÙŠÙ„">
   </div>
-  <button class="btn-save" onclick="saveProductToCloud()">➄1�7 نشر الصنف في المتجر أونلاين</button>
+  <button class="btn-save" onclick="saveProductToCloud()">âž„1¤7 Ù†Ø´Ø± Ø§Ù„ØµÙ†Ù ÙÙŠ Ø§Ù„Ù…ØªØ¬Ø± Ø£ÙˆÙ†Ù„Ø§ÙŠÙ†</button>
 </div>
 
 <div class="grid" id="productsGrid">
-  <div style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 30px;">جاري تحميل المنتجات...</div>
+  <div style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 30px;">Ø¬Ø§Ø±ÙŠ ØªØ­Ù…ÙŠÙ„ Ø§Ù„Ù…Ù†ØªØ¬Ø§Øª...</div>
 </div>
 
 <script>
   const DB_URL = "https://my-store-4f1a8-default-rtdb.firebaseio.com/products";
-  const MY_PHONE = "201026516213"; // غيره لرقم تليفونك
-  const ADMIN_PASS = "123456"; 
+  const MY_PHONE = "201026516213"; // ØºÙŠØ±Ù‡ Ù„Ø±Ù‚Ù… ØªÙ„ÙŠÙÙˆÙ†Ùƒ
+  const ADMIN_PASS = "909090"; 
 
   let isAdmin = false;
 
   function toggleAdmin() {
     if (!isAdmin) {
-      const pass = prompt("أدخل كلمة المرور الخاصة بالإدارة:");
+      const pass = prompt("Ø£Ø¯Ø®Ù„ ÙƒÙ„Ù…Ø© Ø§Ù„Ù…Ø±ÙˆØ± Ø§Ù„Ø®Ø§ØµØ© Ø¨Ø§Ù„Ø¥Ø¯Ø§Ø±Ø©:");
       if (pass === ADMIN_PASS) {
         isAdmin = true;
         document.getElementById('adminPanel').style.display = 'block';
         document.querySelectorAll('.btn-del-item').forEach(b => b.style.display = 'block');
-      } else { alert("كلمة المرور غير صحيحة!"); }
+      } else { alert("ÙƒÙ„Ù…Ø© Ø§Ù„Ù…Ø±ÙˆØ± ØºÙŠØ± ØµØ­ÙŠØ­Ø©!"); }
     } else {
       isAdmin = false;
       document.getElementById('adminPanel').style.display = 'none';
@@ -75,12 +75,12 @@
     const price = document.getElementById('pPrice').value.trim();
     let img = document.getElementById('pImg').value.trim();
     const desc = document.getElementById('pDesc').value.trim();
-    if (!name || !price) { alert("يرجى كتابة الاسم والسعر"); return; }
+    if (!name || !price) { alert("ÙŠØ±Ø¬Ù‰ ÙƒØªØ§Ø¨Ø© Ø§Ù„Ø§Ø³Ù… ÙˆØ§Ù„Ø³Ø¹Ø±"); return; }
     if (!img) img = "https://placehold.co/400x300?text=" + encodeURIComponent(name);
 
     const res = await fetch(`${DB_URL}.json`, { method: 'POST', body: JSON.stringify({ name, price, img, desc }) });
     if (res.ok) {
-      alert("تمت الإضافة بنجاح!");
+      alert("ØªÙ…Øª Ø§Ù„Ø¥Ø¶Ø§ÙØ© Ø¨Ù†Ø¬Ø§Ø­!");
       document.getElementById('pName').value = '';
       document.getElementById('pPrice').value = '';
       document.getElementById('pImg').value = '';
@@ -96,7 +96,7 @@
       const grid = document.getElementById('productsGrid');
       grid.innerHTML = '';
       if (!data) {
-        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 30px;">لا توجد منتجات معروضة حالياً.</div>';
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: #64748b; padding: 30px;">Ù„Ø§ ØªÙˆØ¬Ø¯ Ù…Ù†ØªØ¬Ø§Øª Ù…Ø¹Ø±ÙˆØ¶Ø© Ø­Ø§Ù„ÙŠØ§Ù‹.</div>';
         return;
       }
       Object.keys(data).forEach(id => {
@@ -104,13 +104,13 @@
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-          <img src="${item.img}" alt="${item.name}" onerror="this.src='https://placehold.co/400x300?text=منتج'">
+          <img src="${item.img}" alt="${item.name}" onerror="this.src='https://placehold.co/400x300?text=Ù…Ù†ØªØ¬'">
           <div class="card-body">
             <div class="card-title">${item.name}</div>
             <div style="font-size:12px; color:#64748b; margin-bottom:8px;">${item.desc || ''}</div>
-            <div class="card-price">${item.price} ج.م</div>
-            <button class="btn-buy" onclick="orderItem('${item.name}', '${item.price}')">طلب عبر واتساب 💬</button>
-            <button class="btn-del-item" onclick="deleteProduct('${id}')" style="display: ${isAdmin ? 'block' : 'none'};">حذف الصنف 🗑︄1�7</button>
+            <div class="card-price">${item.price} Ø¬.Ù…</div>
+            <button class="btn-buy" onclick="orderItem('${item.name}', '${item.price}')">Ø·Ù„Ø¨ Ø¹Ø¨Ø± ÙˆØ§ØªØ³Ø§Ø¨ ðŸ’¬</button>
+            <button class="btn-del-item" onclick="deleteProduct('${id}')" style="display: ${isAdmin ? 'block' : 'none'};">Ø­Ø°Ù Ø§Ù„ØµÙ†Ù ðŸ—‘ï¸„1¤7</button>
           </div>
         `;
         grid.appendChild(card);
@@ -119,14 +119,14 @@
   }
 
   async function deleteProduct(id) {
-    if (confirm("هل تريد حذف هذا المنتج نهائياً؟")) {
+    if (confirm("Ù‡Ù„ ØªØ±ÙŠØ¯ Ø­Ø°Ù Ù‡Ø°Ø§ Ø§Ù„Ù…Ù†ØªØ¬ Ù†Ù‡Ø§Ø¦ÙŠØ§Ù‹ØŸ")) {
       await fetch(`${DB_URL}/${id}.json`, { method: 'DELETE' });
       loadProducts();
     }
   }
 
   function orderItem(name, price) {
-    const text = encodeURIComponent(`مرحباً، أود الاستفسار وطلب:\n- الصنف: ${name}\n- السعر: ${price} ج.م`);
+    const text = encodeURIComponent(`Ù…Ø±Ø­Ø¨Ø§Ù‹ØŒ Ø£ÙˆØ¯ Ø§Ù„Ø§Ø³ØªÙØ³Ø§Ø± ÙˆØ·Ù„Ø¨:\n- Ø§Ù„ØµÙ†Ù: ${name}\n- Ø§Ù„Ø³Ø¹Ø±: ${price} Ø¬.Ù…`);
     window.open(`https://wa.me/${MY_PHONE}?text=${text}`, '_blank');
   }
 
